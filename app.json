@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "COVID-19 Monitor",
+    "slug": "covid-19-monitor",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FDFDFD"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#FDFDFD",
+      "color": "#333"
+    },
+    "androidNavigationBar": {
+      "visible": true,
+      "barSyle": "light-content",
+      "backgroundColor": "#FDFDFD"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.webtools.covid-19-monitor",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.webtools.covid19monitor",
+      "versionCode": 2,
+      "permissions": []
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "expo.ts",
+        "expo.tsx",
+        "expo.js",
+        "expo.jsx",
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "wasm",
+        "svg"
+      ]
+    }
+  }
+}
