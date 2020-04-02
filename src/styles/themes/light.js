@@ -5,7 +5,7 @@ export default {
     primary: '#003CBF',
     secundary: '#FDFDFD',
     tertiary: '#efeff2',
-    quarterly: '#737375',
+    quarterly: '#e9e9e9',
 
     background: '#101010',
     text: '#3A4969',

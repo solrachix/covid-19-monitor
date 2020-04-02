@@ -7,7 +7,7 @@ import { ThemeContext } from 'styled-components';
 import Icon from '@expo/vector-icons/MaterialIcons'
 
 import WithLine from '../Charts/WithLine'
-import { Container, Row, Flag, Name } from './styles'
+import { Container, Header, Body, Column, Row, Flag, Name } from './styles'
 
 function CountryInfo({ countryData }) {
   const themeContext = useContext(ThemeContext).colors;
@@ -21,7 +21,7 @@ function CountryInfo({ countryData }) {
   function handlerClick(event){
     if(extend == true){
       Animated.timing(animationValue, {
-        toValue : 300,
+        toValue : 325,
         timing : 1500
       }).start(()=>{
         setExtend(false)
@@ -44,10 +44,13 @@ function CountryInfo({ countryData }) {
   return (
     <Container 
       extend      
-      style={{ height: animationValue }}
+      style={{ 
+        height: animationValue,
+        // justifyContent: extend ? 'center' : 'flex-start',
+      }}
     >
-
-        <Row onPress={handlerClick}>
+      <Header onPress={handlerClick} >
+        <Row >
           <Flag
             source={{ uri: countryData.countryInfo.flag }}
           />
@@ -62,8 +65,54 @@ function CountryInfo({ countryData }) {
           <Icon name="my-location" size={24} color={themeContext.text}/>
           {/* <WithLine/> */}
         </Row>
+      </Header>
+      
+      {!extend && 
+      <Body onPress={handlerClick}>
+         <Row onPress={handlerClick}>
+          <Column>
+            <Name style={{opacity: 0.3}}>Confirmed</Name>
+            <Name>74.0011</Name>
+          </Column>
+          
+          <WithLine width="50%" />
 
-    </Container>
+          <Column>
+            <Name style={{opacity: 0.3}}>+25.6%</Name>
+            <Name>+7.005%</Name>
+          </Column>
+        </Row>
+
+        <Row onPress={handlerClick}>
+          <Column>
+            <Name style={{opacity: 0.3}}>Recovered</Name>
+            <Name>74.0011</Name>
+          </Column>
+          
+          <WithLine width="50%" />
+
+          <Column>
+            <Name style={{opacity: 0.3}}>+25.6%</Name>
+            <Name>+7.005%</Name>
+          </Column>
+        </Row>
+
+        <Row onPress={handlerClick}>
+          <Column>
+            <Name style={{opacity: 0.3}}>Death</Name>
+            <Name>74.0011</Name>
+          </Column>
+          
+          <WithLine width="50%" />
+
+          <Column>
+            <Name style={{opacity: 0.3}}>+25.6%</Name>
+            <Name>+7.005%</Name>
+          </Column>
+        </Row>
+      </Body>   
+      }
+  </Container>
   );
 }
 
