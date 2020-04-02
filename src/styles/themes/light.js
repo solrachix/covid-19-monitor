@@ -9,7 +9,7 @@ export default {
 
     text: '#3A4969',
 
-    Blue: '#06CAFD',
-    Red: '#FF5C4D',
+    blue: '#06CAFD',
+    red: '#FF5C4D',
   }
 };

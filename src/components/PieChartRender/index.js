@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart } from 'react-native-svg-charts';
 
-import { Container, Title } from './styles';
+import { Container, Content, Row, Title, MiniCard } from './styles';
 
 const formatNumber = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
@@ -23,16 +23,33 @@ function PieChartRender({ data, children }) {
 
   return (
     <Container>
-      <PieChart style={{ width: '60%', height: 200 }} innerRadius={70} data={pieData}>
 
-        <Title>
-          {formatNumber(amount)}
-        </Title>
-        
-      </PieChart>
-      {children}
+      <Row>
+        <PieChart style={{ width: '60%', height: 200 }} innerRadius={70} data={pieData}>
+          <Title>
+            {formatNumber(amount)}
+          </Title>
+
+        </PieChart>
+        {children}
+      </Row>
+
+      <Content>
+        <MiniCardComp></MiniCardComp>
+        <MiniCardComp></MiniCardComp>
+        <MiniCardComp></MiniCardComp>
+        <MiniCardComp></MiniCardComp>
+      </Content>
+      
     </Container>
   );
 }
 
+const MiniCardComp = () => {
+  return (
+    <MiniCard>
+
+    </MiniCard>
+  );
+}
 export default PieChartRender;
