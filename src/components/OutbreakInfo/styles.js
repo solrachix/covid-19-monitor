@@ -11,9 +11,15 @@ export const Header = styled.View`
 
 export const Text = styled.Text`
   font-size: 15px;
-  color: ${({ theme, Featured }) => Featured ? theme.colors.primary : theme.colors.quarterly };
+  color: ${({ theme, Featured }) => Featured ? theme.colors.primary : theme.colors.text };
   text-align: center;
   margin-bottom: 10px;
+`;
+
+export const Title = styled.Text`
+    text-align: center;
+    color: ${({ theme }) => theme.colors.text};
+    font-size: 24px;
 `;
 
 export const CountryInfo = styled.View`

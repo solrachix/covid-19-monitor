@@ -26,6 +26,9 @@ function Main() {
       setData(null);
       setLoading(true);
       const response = await api.get('/all');
+      const a = await api.get('/countries');
+      console.log(a);
+      
       setData(response.data);
       setLoading(false);
     } else {
@@ -39,6 +42,8 @@ function Main() {
 
   return (
     <Container>
+      {data && <OutbreakInfo outbreakData={data} />}
+      
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
@@ -47,8 +52,7 @@ function Main() {
         >
           <ButtonCountriesText>Show Countries List</ButtonCountriesText>
         </ButtonCountries>
-      )}
-      {data && <OutbreakInfo outbreakData={data} />}
+      )}      
     </Container>
   );
 }

@@ -4,7 +4,7 @@ import { Animated } from 'react-native';
 export const Container = styled(Animated.View)`
     height: 44px;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 6px;
 
     background-color: ${({ theme }) => theme.colors.secundary };
     border-bottom-width: 1px;
@@ -32,9 +32,8 @@ export const Header = styled.TouchableOpacity`
 export const Body = styled.View`
     flex: 1;
     width: 100%;
-    max-width: 90%;
+    max-width: 100%;
     height: 44px;
-
 
     /* background-color: ${({ theme }) => theme.colors.primary }; */
 
@@ -47,7 +46,7 @@ export const Row = styled.TouchableOpacity`
     position: relative;
     /* width: 100%; */
     /* height: 100%; */
-    padding-bottom: 30px;
+    padding-bottom: 22px;
 
     /* background-color: ${({ theme }) => theme.colors.primary }; */
 
@@ -66,6 +65,7 @@ export const Column = styled.TouchableOpacity`
 
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 `;
 
 export const Name = styled.Text`
@@ -75,7 +75,7 @@ export const Name = styled.Text`
 
     font-size: 16px;
     line-height: 44px;
-    color: #333
+    color: #333;
 `;
 
 export const Flag = styled.Image`

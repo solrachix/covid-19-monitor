@@ -5,7 +5,7 @@ import { TouchableOpacity, View } from 'react-native';
 import Panel from '../Panel';
 import PieChartRender from '../PieChartRender';
 
-import { Container, Header, Text, CountryInfo, CountryName, CountryFlag } from './styles';
+import { Container, Header, Text, Title, CountryInfo, CountryName, CountryFlag } from './styles';
 
 function OutbreakInfo({ outbreakData }) {
   const [data, setData] = useState();
@@ -39,6 +39,28 @@ function OutbreakInfo({ outbreakData }) {
   return (
     <Container>      
       <Header>
+        <Title>
+          Global Cases
+        </Title>
+      </Header>
+
+      {outbreakData.countryInfo && (
+        <CountryInfo>
+          <CountryFlag
+            style={styles.countryFlag}
+            source={{ uri: outbreakData.countryInfo.flag }}
+          />
+          <CountryName>{outbreakData.country}</CountryName>
+        </CountryInfo>
+      )}
+      {data && 
+        <PieChartRender data={data}>
+          <Panel data={data} />
+        </PieChartRender>
+      }
+      {/* {data && <Panel data={data} />} */}
+
+      <Header>
         <Text>Data sources from: </Text>
         <TouchableOpacity
           onPress={() => {
@@ -59,17 +81,6 @@ function OutbreakInfo({ outbreakData }) {
         )}
       </Header>
 
-      {outbreakData.countryInfo && (
-        <CountryInfo>
-          <CountryFlag
-            style={styles.countryFlag}
-            source={{ uri: outbreakData.countryInfo.flag }}
-          />
-          <CountryName>{outbreakData.country}</CountryName>
-        </CountryInfo>
-      )}
-      {data && <PieChartRender data={data} />}
-      {data && <Panel data={data} />}
     </Container>
   );
 }

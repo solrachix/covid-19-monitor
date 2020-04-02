@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import icon from '@expo/vector-icons/Ionicons';
 
 export const Container = styled.View`
-  width: 100%;
+  width: 90%;
 
   flex-direction: row;
 `;

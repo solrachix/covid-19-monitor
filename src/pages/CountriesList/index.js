@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import api from '../../services/api';
 
-import { Container, Row, GlobalButton, Icon } from './styles';
+import { Container, List } from './styles';
 
 import CountryInfo from '../../components/CountryInfo';
 import Search from '../../components/Search';
@@ -52,8 +52,8 @@ function CountriesList() {
     setCountriesList(countriesFiltered);
   }
 
-  function navigateToMain() {
-    navigation.navigate('Main', { outbreakData: null });
+  function navigateToMapView() {
+    navigation.navigate('MapView', { outbreakData: null });
   }
 
   return (
@@ -71,11 +71,11 @@ function CountriesList() {
             value={search}
             onChangeText={filterCountriesByName}
           />
-          <FlatList
+          <List
             data={countriesList}
             keyExtractor={item => String(item.position)}
             showsVerticalScrollIndicator={false}
-            renderItem={({ item }) => <CountryInfo countryData={item} />}
+            renderItem={({ item }) => <CountryInfo countryData={item} onPress={navigateToMapView} />}
           />
         </>
       )}

@@ -8,6 +8,7 @@ import Main from './pages/Main';
 import LineChart from './pages/LineChart';
 import CountriesList from './pages/CountriesList';
 import WebViewRender from './pages/WebViewRender';
+import MapView from './pages/MapView';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -49,9 +50,19 @@ function Routes() {
           component={CountriesList}
           options={{
             title: 'Countries List',
+            headerLeft: () => {}
             // header: () => {}
           }}
         />
+
+        <Screen
+          name="MapView"
+          component={MapView}
+          options={{
+            title: 'Map View',
+          }}
+        />
+
         <Screen
           name="WebViewRender"
           component={WebViewRender}
