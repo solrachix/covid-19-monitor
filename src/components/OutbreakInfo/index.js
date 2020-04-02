@@ -36,7 +36,6 @@ function OutbreakInfo({ outbreakData }) {
       setLastUpdate('');
     }
   }
-  console.log(Intl.getCanonicalLocales())
   return (
     <Container>      
       <Header>

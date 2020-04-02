@@ -22,6 +22,7 @@ function Routes() {
           headerStyle: {
               backgroundColor: themeContext.secundary,
               height: 60,
+              elevation: 0
           },
           gestureEnabled: true,
           cardOverlayEnabled: true,                    
@@ -48,6 +49,7 @@ function Routes() {
           component={CountriesList}
           options={{
             title: 'Countries List',
+            // header: () => {}
           }}
         />
         <Screen

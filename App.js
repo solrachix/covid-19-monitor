@@ -1,4 +1,7 @@
-import IntlProvider from 'react-intl';
+import 'intl';
+import 'intl/locale-data/jsonp/en';
+import { IntlProvider } from 'react-intl';
+import { FormattedMessage } from 'react-intl-native'
 
 import React, { useState } from 'react';
 import { AppRegistry, StatusBar } from 'react-native';
@@ -15,7 +18,11 @@ export default function App() {
     <IntlProvider locale="en">
       <ThemeProvider theme={theme}>
         <StatusBar barStyle="dark-content" backgroundColor="#FDFDFD" />
-        <Routes theme={theme} /> 
+        <Routes theme={theme} />
+        <FormattedMessage
+          id={5555555}
+          defaultMessage="bom"
+          style={{ fontWeight: 'bold' }} />
       </ThemeProvider>
     </IntlProvider>
   );

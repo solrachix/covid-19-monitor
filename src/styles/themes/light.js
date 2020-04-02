@@ -8,7 +8,7 @@ export default {
     quarterly: '#737375',
 
     background: '#101010',
-    text: '#1E2E54',
+    text: '#3A4969',
     placeholder: '#959698',
 
     

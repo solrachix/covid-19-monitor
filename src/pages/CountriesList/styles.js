@@ -3,7 +3,7 @@ import icon from '@expo/vector-icons/Ionicons';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  padding: 15px;
+  /* padding: 15px; */
   background-color: ${({ theme }) => theme.colors.secundary };
   justify-content: center;
 `;
