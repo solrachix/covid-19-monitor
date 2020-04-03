@@ -33,7 +33,7 @@ function CountriesList() {
       const countriesSortedByCasesDesc = countries
         .sort((countryA, countryB) => countryB.cases - countryA.cases)
         .map((item, index) => ({ ...item, position: index + 1 }));
-
+      
       setAllCountriesList(countriesSortedByCasesDesc);
       setCountriesList(countriesSortedByCasesDesc);
       setLoading(false);
@@ -52,8 +52,10 @@ function CountriesList() {
     setCountriesList(countriesFiltered);
   }
 
-  function navigateToMapView() {
-    navigation.navigate('MapView', { outbreakData: null });
+  function navigateToMapView(countryInfo) {
+    console.log(countryInfo);
+    
+    navigation.navigate('MapView', { allCountriesList, selectedCountry: countryInfo });
   }
 
   return (

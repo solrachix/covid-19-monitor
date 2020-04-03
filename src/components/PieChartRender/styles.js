@@ -25,6 +25,7 @@ export const MiniCard = styled.View`
     margin-right: 10px;
     min-width: 45%;
     height: 100px;
+    padding: 10px;
 
     background-color: ${({ theme }) => theme.colors.secundary }
 
@@ -36,4 +37,10 @@ export const Title = styled.Text`
     color: ${({ theme }) => theme.colors.primary};
     font-size: 24px;
     line-height: 200px;
+`;
+
+export const Text = styled.Text`
+  color: ${({ theme }) => theme.colors.text };
+  font-size: 12px;
+  text-align: justify;
 `;

@@ -60,7 +60,7 @@ function CountryInfo({ countryData, onPress }) {
           </Name>
         </Row>
 
-        <Row onPress={onPress}>
+        <Row onPress={() => onPress(countryData.countryInfo)}>
           <Icon name="my-location" size={24} color={themeContext.text}/>
           {/* <WithLine/> */}
         </Row>

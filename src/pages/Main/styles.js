@@ -1,20 +1,21 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView`
   flex: 1;
   height: 100%;
   padding: 15px;
 
   background-color: ${({ theme }) => theme.colors.secundary };
 
-  justify-content: space-evenly;
-  align-items: center;
+  /* justify-content: space-evenly;
+  align-items: center; */
 `;
 
 export const ButtonCountries = styled.TouchableOpacity`
   width: 70%;
   height: 50px;
-  padding: 10px;
+  padding: 10px;  
+  margin-bottom: 80px;
   /* margin: 30px; */
 
   background-color: ${({ theme }) => theme.colors.primary };

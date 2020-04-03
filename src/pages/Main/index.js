@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import {
-  ActivityIndicator,
-} from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
 import api from '../../services/api';
+
+import Lottie from 'lottie-react-native';
+import StayAtHome from '../../assets/StayAtHome.json';
 
 import { Container, ButtonCountries, ButtonCountriesText } from './styles';
 
@@ -26,8 +27,6 @@ function Main() {
       setData(null);
       setLoading(true);
       const response = await api.get('/all');
-      const a = await api.get('/countries');
-      console.log(a);
       
       setData(response.data);
       setLoading(false);
@@ -41,7 +40,12 @@ function Main() {
   }
 
   return (
-    <Container>
+    <Container contentContainerStyle={{
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+    }}>
+      {/* <Lottie style={{ backgroundColor: "#f00"}} source={StayAtHome} autoPlay autoSize resizeMode="contain" loop /> */}
+
       {data && <OutbreakInfo outbreakData={data} />}
       
       {loading ? (
