@@ -1,18 +1,22 @@
 import React from 'react';
-import { Marker } from 'react-native-maps';
 
-import { Container, MapView, MarkerComponent, CalloutComponent, Bubble } from './styles';
+import mapTheme from '../../assets/mapTheme.json';
 
-export default function MapViewComponent({ route }) {
+import BackComponent from '../../components/BackComponent';
+import { Container, MapView, MarkerComponent, CalloutComponent, Bubble, Text } from './styles';
+
+export default function MapViewComponent({ navigation, route }) {
   const allCountriesList = route.params.allCountriesList;
   const selectedCountry = route.params.selectedCountry;
-
+  
   return (
     <Container>
+      <BackComponent onPress={() => navigation.goBack() }/>
       <MapView
         loadingEnabled = {true}
         showsCompass={true}
         provider="google"
+        customMapStyle={mapTheme}
 
         initialRegion={{
           longitude: selectedCountry ? selectedCountry.long : 0,
@@ -22,23 +26,20 @@ export default function MapViewComponent({ route }) {
         }}
       >
         {allCountriesList &&
-          allCountriesList.map(({ deaths, country, countryInfo }) => deaths > 1000 ? (
+          allCountriesList.map(({ casesPerOneMillion, cases, recovered, deaths, country, countryInfo }) => deaths > 1000 ? (
             <MarkerComponent key={countryInfo._id + country + countryInfo.lat} coordinate={{ latitude: countryInfo.lat, longitude: countryInfo.long, }}>
               <Bubble style={{
                 width: deaths * 0.01,
                 height: deaths * 0.01,
               }}/>
 
-              {/* <CalloutComponent onPress={ () => {
-                // navegação
-                navigation.navigate('Profile', { github_username })
-              }}>
-                <View style={styles.callout}>
-                  <Text style={styles.devName}>{ name }</Text>
-                  <Text style={styles.devBio}>{ bio }</Text>
-                  <Text style={styles.devTechs}>{ techs.join(', ') }</Text>
-                </View>
-              </CalloutComponent> */}
+              <CalloutComponent>
+                <Text title>{ country }</Text>
+                <Text>Confirmed: { cases }</Text>
+                <Text>Deaths: { deaths }</Text>
+                <Text>Recovered: { recovered }</Text>
+                <Text>Cases Per One Million: { casesPerOneMillion }</Text>
+              </CalloutComponent>
             </MarkerComponent>
           ): null )
         }

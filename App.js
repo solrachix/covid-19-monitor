@@ -19,10 +19,10 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <StatusBar barStyle="dark-content" backgroundColor="#FDFDFD" />
         <Routes theme={theme} />
-        <FormattedMessage
+        {/* <FormattedMessage
           id={5555555}
           defaultMessage="bom"
-          style={{ fontWeight: 'bold' }} />
+          style={{ fontWeight: 'bold' }} /> */}
       </ThemeProvider>
     </IntlProvider>
   );

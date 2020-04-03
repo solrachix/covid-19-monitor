@@ -10,6 +10,8 @@ import CountriesList from './pages/CountriesList';
 import WebViewRender from './pages/WebViewRender';
 import MapView from './pages/MapView';
 
+import BackComponent from './components/BackComponent';
+
 const { Navigator, Screen } = createStackNavigator();
 
 function Routes() {
@@ -60,6 +62,11 @@ function Routes() {
           component={MapView}
           options={{
             title: 'Map View',
+            gestureEnabled: true,
+            cardOverlayEnabled: true,                    
+          ...TransitionPresets.ModalSlideFromBottomIOS,
+            header: () => {},
+            // header: ({ ...props }) => <BackComponent { ...props } />,
           }}
         />
 
@@ -69,6 +76,7 @@ function Routes() {
           options={{
             title: 'Web View',
           }}
+
         />
       </Navigator>
     </NavigationContainer>
