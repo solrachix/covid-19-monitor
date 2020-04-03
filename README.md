@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Logo" src="https://github.com/solrachix/be-the-hero/blob/master/assets/Template.png?raw=true/sss"  width="800px" style="border-radius:16px;"/>
+    <img alt="Be the Hero" src="https://github.com/solrachix/be-the-hero/blob/master/assets/Template.png?raw=true"  width="800px" style="border-radius:16px;"/>
 </h1>
 
 <h3 align="center" >
@@ -39,17 +39,12 @@ Monitor COVID-19 in your country and in the world, view line and circle graphs, 
 
 </p>
 
-
 <p align="center">
   <a href="#description">Description</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies-used">Technologies used</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#prerequisites">Prerequisites</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installing">Installing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#sources">Sources</a>
-</p>
-
-<p align="center">
-  <img alt="Preview" src="./preview.jpg" width="100%">
 </p>
 
 
@@ -62,7 +57,7 @@ Monitor COVID-19 in your country and in the world, view line and circle graphs, 
 	* **@react-native-community/masked-view**: 0.1.5
 	* **@react-navigation/native**:  ^5.1.3
 	* **@react-navigation/stack**:  ^5.2.6
-* **axio**:  ^0.19.2
+* **axio**s:  ^0.19.2
 * **expo**:  ~36.0.0
 * **expo-constants**:  ~8.0.0
 * **expo-mail-composer**:  ~8.0.0
