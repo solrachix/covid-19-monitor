@@ -34,16 +34,7 @@ function PieChartRender({ data, children }) {
         {children}
       </Row>
 
-      <Content>
-        <MiniCardComp>
-            <Text>
-              a
-            </Text>
-        </MiniCardComp>
-        <MiniCardComp></MiniCardComp>
-        <MiniCardComp></MiniCardComp>
-        <MiniCardComp></MiniCardComp>
-      </Content>
+
       
     </Container>
   );

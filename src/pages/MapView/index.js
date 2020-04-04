@@ -25,7 +25,7 @@ export default function MapViewComponent({ navigation, route }) {
           longitudeDelta: 50,
         }}
       >
-        {allCountriesList &&
+        {allCountriesList && 
           allCountriesList.map(({ casesPerOneMillion, cases, recovered, deaths, country, countryInfo }) => deaths > 1000 ? (
             <MarkerComponent key={countryInfo._id + country + countryInfo.lat} coordinate={{ latitude: countryInfo.lat, longitude: countryInfo.long, }}>
               <Bubble style={{

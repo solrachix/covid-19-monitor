@@ -7,7 +7,7 @@ import PieChartRender from '../PieChartRender';
 
 import { Container, Header, Text, Title, CountryInfo, CountryName, CountryFlag } from './styles';
 
-function OutbreakInfo({ outbreakData }) {
+function OutbreakInfo({ children, outbreakData }) {
   const [data, setData] = useState();
   const [lastUpdate, setLastUpdate] = useState('');
 
@@ -60,6 +60,8 @@ function OutbreakInfo({ outbreakData }) {
       }
       {/* {data && <Panel data={data} />} */}
 
+      { children }
+      
       <Header>
         <Text>Data sources from: </Text>
         <TouchableOpacity

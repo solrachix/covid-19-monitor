@@ -40,7 +40,7 @@ export const Color = styled.View`
 `;
 
 export const Value = styled.Text`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
 `;
@@ -51,3 +51,38 @@ export const Text = styled.Text`
   text-align: justify;
 `;
 
+
+export const CardPanelContainer = styled.View`
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+    height: 300px;
+    margin-bottom: 50px;
+`;
+export const MiniCard = styled.View`
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 45%;
+  max-width: 45%;
+  height: 100px;
+  padding: 15px 15px;
+
+  /* background-color: ${({ theme }) => theme.colors.primary } */
+  /* border: 1px solid ${({ theme }) => theme.colors.tertiary }; */
+  border-radius: 4px;
+
+  elevation: 2; 
+
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const Row = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;

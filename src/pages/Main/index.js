@@ -7,12 +7,14 @@ import api from '../../services/api';
 import Lottie from 'lottie-react-native';
 import StayAtHome from '../../assets/StayAtHome.json';
 
-import { Container, ButtonCountries, ButtonCountriesText } from './styles';
+import { Container, ButtonCountries, ButtonCountriesText, CardContainer, MiniCard } from './styles';
 
 import OutbreakInfo from '../../components/OutbreakInfo';
+import {CardPanel} from '../../components/Panel';
 
 function Main() {
   const [data, setData] = useState();
+  const [ cardPanel, setCardPanel ] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const navigation = useNavigation();
@@ -27,7 +29,9 @@ function Main() {
       setData(null);
       setLoading(true);
       const response = await api.get('/all');
-      
+      const { active, recovered, deaths, affectedCountries } = response.data;
+
+      setCardPanel([recovered, active, deaths, affectedCountries]);
       setData(response.data);
       setLoading(false);
     } else {
@@ -46,17 +50,23 @@ function Main() {
     }}>
       {/* <Lottie style={{ backgroundColor: "#f00"}} source={StayAtHome} autoPlay autoSize resizeMode="contain" loop /> */}
 
-      {data && <OutbreakInfo outbreakData={data} />}
-      
-      {loading ? (
-        <ActivityIndicator size="large" color="#0000ff" />
-      ) : (
-        <ButtonCountries
-          onPress={navigateToCountriesList}
-        >
-          <ButtonCountriesText>Show Countries List</ButtonCountriesText>
-        </ButtonCountries>
-      )}      
+      {data && 
+        <OutbreakInfo outbreakData={data}>
+          
+          <CardPanel data={cardPanel} />
+
+          {loading ? (
+            <ActivityIndicator size="large" color="#0000ff" />
+          ) : (
+            <ButtonCountries
+              onPress={navigateToCountriesList}
+            >
+              <ButtonCountriesText>Show Countries List</ButtonCountriesText>
+            </ButtonCountries>
+          )} 
+        </OutbreakInfo>
+      }
+           
     </Container>
   );
 }

@@ -32,7 +32,8 @@ function CountriesList() {
 
       const countriesSortedByCasesDesc = countries
         .sort((countryA, countryB) => countryB.cases - countryA.cases)
-        .map((item, index) => ({ ...item, position: index + 1 }));
+        .map((item, index) => ({ ...item, position: index + 1 }))
+        .filter((obj) => obj.country != 'World');
       
       setAllCountriesList(countriesSortedByCasesDesc);
       setCountriesList(countriesSortedByCasesDesc);
@@ -53,8 +54,6 @@ function CountriesList() {
   }
 
   function navigateToMapView(countryInfo) {
-    console.log(countryInfo);
-    
     navigation.navigate('MapView', { allCountriesList, selectedCountry: countryInfo });
   }
 

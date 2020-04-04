@@ -27,9 +27,11 @@ export const MiniCard = styled.View`
     height: 100px;
     padding: 10px;
 
-    background-color: ${({ theme }) => theme.colors.secundary }
+    /* background-color: ${({ theme }) => theme.colors.primary } */
 
     elevation: 5; 
+
+    /* transform: rotateY(90deg) */
 `;
 
 export const Title = styled.Text`
@@ -40,7 +42,7 @@ export const Title = styled.Text`
 `;
 
 export const Text = styled.Text`
-  color: ${({ theme }) => theme.colors.text };
-  font-size: 12px;
-  text-align: justify;
+    color: ${({ theme }) => theme.colors.text };
+    font-size: 12px;
+    text-align: justify;
 `;

@@ -12,7 +12,7 @@ export const Container = styled.ScrollView`
 `;
 
 export const ButtonCountries = styled.TouchableOpacity`
-  width: 70%;
+  min-width: 70%;
   height: 50px;
   padding: 10px;  
   margin-bottom: 80px;
