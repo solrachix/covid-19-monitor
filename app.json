@@ -11,15 +11,16 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FDFDFD"
+      "backgroundColor": "#F1EBE0"
     },
-    "androidStatusBar": {
-      "backgroundColor": "#FDFDFD",
+    "androidStatusBar": {      
+      "translucent": true,
+      "backgroundColor": "#FDFDFD22",
       "color": "#333"
     },
     "androidNavigationBar": {
-      "visible": true,
-      "barSyle": "light-content",
+      "visible": false,
+      "barSyle": "dark-content",
       "backgroundColor": "#FDFDFD"
     },
     "updates": {
