@@ -5,6 +5,8 @@ import mapTheme from '../../assets/mapTheme.json';
 import BackComponent from '../../components/BackComponent';
 import { Container, MapView, MarkerComponent, CalloutComponent, Bubble, Text } from './styles';
 
+const Decimal = number => Intl.NumberFormat('pt-BR', {style: 'decimal'}).format(number)
+
 export default function MapViewComponent({ navigation, route }) {
   const allCountriesList = route.params.allCountriesList;
   const selectedCountry = route.params.selectedCountry;
@@ -35,10 +37,11 @@ export default function MapViewComponent({ navigation, route }) {
 
               <CalloutComponent>
                 <Text title>{ country }</Text>
-                <Text>Confirmed: { cases }</Text>
-                <Text>Deaths: { deaths }</Text>
-                <Text>Recovered: { recovered }</Text>
-                <Text>Cases Per One Million: { casesPerOneMillion }</Text>
+                <Text>Confirmed: { Decimal(cases) }</Text>
+                <Text>Deaths: { Decimal(deaths) }</Text>
+                <Text>Recovered: { Decimal(recovered) }</Text>
+                <Text>Cases Per One Million: {Decimal(casesPerOneMillion)}
+                </Text>
               </CalloutComponent>
             </MarkerComponent>
           ): null )

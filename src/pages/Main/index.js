@@ -48,7 +48,7 @@ function Main() {
       justifyContent: 'space-evenly',
       alignItems: 'center',
     }}>
-      {/* <Lottie style={{ backgroundColor: "#f00"}} source={StayAtHome} autoPlay autoSize resizeMode="contain" loop /> */}
+      {/* <Lottie style={{ flex:1, backgroundColor: "#f00"}} source={StayAtHome} autoPlay autoSize resizeMode="contain" loop /> */}
 
       {data && 
         <OutbreakInfo outbreakData={data}>
