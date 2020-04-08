@@ -37,10 +37,6 @@ function CountryInfo({ countryData, onPress }) {
     }
   }
 
-  function navidateLineChart(data) {
-    navigation.navigate('LineChart', { outbreakData: data });
-  }
-
   return (
     <Container 
       extend      
@@ -48,7 +44,9 @@ function CountryInfo({ countryData, onPress }) {
         height: animationValue,
       }}
     >
-      <Header onPress={handlerClick} >
+      <Header 
+        // onPress={handlerClick}
+      >
         <Row >
           <Flag
             source={{ uri: countryData.countryInfo.flag }}
@@ -68,10 +66,12 @@ function CountryInfo({ countryData, onPress }) {
       
       {!extend && 
         <Body onPress={handlerClick}>
-          <Row onPress={handlerClick}>
+          <Row 
+            onPress={handlerClick}
+          >
             <Column>
               <Name style={{opacity: 0.3}}>Confirmed</Name>
-              <Name>74.0011</Name>
+              <Name>{ active }</Name>
             </Column>
             
             <WithLine width="50%" />
@@ -85,7 +85,7 @@ function CountryInfo({ countryData, onPress }) {
           <Row onPress={handlerClick}>
             <Column>
               <Name style={{opacity: 0.3}}>Recovered</Name>
-              <Name>74.0011</Name>
+              <Name>{ recovered }</Name>
             </Column>
             
             <WithLine width="50%" />
@@ -99,7 +99,7 @@ function CountryInfo({ countryData, onPress }) {
           <Row onPress={handlerClick}>
             <Column>
               <Name style={{opacity: 0.3}}>Death</Name>
-              <Name>74.0011</Name>
+              <Name>{ deaths }</Name>
             </Column>
             
             <WithLine width="50%" />

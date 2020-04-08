@@ -19,9 +19,8 @@
       "color": "#333"
     },
     "androidNavigationBar": {
-      "visible": false,
-      "barSyle": "dark-content",
-      "backgroundColor": "#FDFDFD"
+      "visible": "sticky-immersive",
+      "backgroundColor": "#cacaca"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

@@ -1,11 +1,12 @@
 import React from 'react';
 
+import transformData from '../../utils/transformDate';
+import RoundAndSortNumbers from '../../utils/RoundAndSortNumbers';
+
 import mapTheme from '../../assets/mapTheme.json';
 
 import BackComponent from '../../components/BackComponent';
-import { Container, MapView, MarkerComponent, CalloutComponent, Bubble, Text } from './styles';
-
-const Decimal = number => Intl.NumberFormat('pt-BR', {style: 'decimal'}).format(number)
+import { Container, MapView, MarkerComponent, CalloutComponent, Tooltip, Bubble, Text } from './styles';
 
 export default function MapViewComponent({ navigation, route }) {
   const allCountriesList = route.params.allCountriesList;
@@ -28,20 +29,26 @@ export default function MapViewComponent({ navigation, route }) {
         }}
       >
         {allCountriesList && 
-          allCountriesList.map(({ casesPerOneMillion, cases, recovered, deaths, country, countryInfo }) => deaths > 1000 ? (
+          allCountriesList.map(({ deathsPerOneMillion, casesPerOneMillion, cases, recovered, deaths, country, countryInfo, updated }) => deaths > 1000 ? (
             <MarkerComponent key={countryInfo._id + country + countryInfo.lat} coordinate={{ latitude: countryInfo.lat, longitude: countryInfo.long, }}>
               <Bubble style={{
                 width: deaths * 0.01,
                 height: deaths * 0.01,
               }}/>
 
-              <CalloutComponent>
-                <Text title>{ country }</Text>
-                <Text>Confirmed: { Decimal(cases) }</Text>
-                <Text>Deaths: { Decimal(deaths) }</Text>
-                <Text>Recovered: { Decimal(recovered) }</Text>
-                <Text>Cases Per One Million: {Decimal(casesPerOneMillion)}
-                </Text>
+              <CalloutComponent tooltip={true}>
+                <Tooltip>
+                  <Text title>{ country }</Text>
+                  <Text subtitle> Last update: &nbsp;
+                    <Text subtitle featured>{ transformData(updated) }</Text>
+                  </Text>
+
+                  <Text>Confirmed: <Text featured>{ Decimal(cases) }</Text></Text>
+                  <Text>Deaths: <Text featured>{ Decimal(deaths) }</Text></Text>
+                  <Text>Recovered: <Text featured>{ Decimal(recovered) }</Text></Text>
+                  <Text>Cases Per One Million: <Text featured>{ Decimal(casesPerOneMillion) }</Text></Text>
+                  <Text>Deaths Per One Million: <Text featured>{ Decimal(deathsPerOneMillion) }</Text></Text>
+                </Tooltip>
               </CalloutComponent>
             </MarkerComponent>
           ): null )
@@ -51,3 +58,19 @@ export default function MapViewComponent({ navigation, route }) {
     </Container>
   );
 }
+
+const Decimal = number => RoundAndSortNumbers({
+    number,
+    billion: {
+      decimal: 1,
+      unit: 'B'
+    },
+    million: {
+      decimal: 1,
+      unit: 'M',
+    },
+    thousand: {
+      decimal: 1,
+      unit: 'K',
+    },
+  })

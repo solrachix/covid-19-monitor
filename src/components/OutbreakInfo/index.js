@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity, View } from 'react-native';
 
+import transformDate from '../../utils/transformDate';
+
 import Panel from '../Panel';
 import PieChartRender from '../PieChartRender';
 
@@ -21,20 +23,7 @@ function OutbreakInfo({ children, outbreakData }) {
     const { active, recovered, deaths, updated } = outbreakData;
 
     setData([active, recovered, deaths]);
-
-    if (updated) {
-      const date = new Date(updated);
-      const day = date.getDate();
-      const month = ('0' + (date.getMonth() + 1)).slice(-2);
-      const year = date.getFullYear();
-      const hours = ('0' + date.getHours()).slice(-2);
-      const minutes = ('0' + date.getMinutes()).slice(-2);
-      const seconds = ('0' + date.getSeconds()).slice(-2);
-
-      setLastUpdate(`${month}/${day}/${year} ${hours}:${minutes}:${seconds}`);
-    } else {
-      setLastUpdate('');
-    }
+    setLastUpdate(transformDate(updated));
   }
   return (
     <Container>      
@@ -77,7 +66,7 @@ function OutbreakInfo({ children, outbreakData }) {
         </TouchableOpacity>
         {lastUpdate.length > 0 && (
           <Text>
-            Last update: 
+            Last update: &nbsp;
             <Text Featured>{lastUpdate}</Text>
           </Text>
         )}

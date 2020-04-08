@@ -54,6 +54,8 @@ function CountriesList() {
   }
 
   function navigateToMapView(countryInfo) {
+    // console.log(allCountriesList);
+    
     navigation.navigate('MapView', { allCountriesList, selectedCountry: countryInfo });
   }
 

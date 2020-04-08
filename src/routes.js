@@ -19,6 +19,7 @@ function Routes() {
   return (
     <NavigationContainer>
       <Navigator 
+        keyboardHandlingEnabled={true}
         screenOptions={{
           headerTitleAlign: 'center',
           headerTintColor: themeContext.text,

@@ -19,7 +19,23 @@ export const MapView = styled(Map_View)`
 export const MarkerComponent = styled(Marker)`
 `;
 export const CalloutComponent = styled(Callout)`
-  width: 200px;
+  width: 250px;
+  height: 200px;
+
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Tooltip = styled.View`
+  width: 90%;
+  height: 100%;
+
+  padding: 10px;
+  elevation: 50;
+
+  background: ${({ theme }) => theme.colors.secundary};
+  /* border: 1px solid #f00; */
+  border-radius: 10px;
 `;
 
 export const Bubble = styled.View`
@@ -32,6 +48,13 @@ export const Bubble = styled.View`
 `;
 
 export const Text = styled.Text`
-  font-size: ${({ title }) => title ? 18 : 14}px;
+  min-width: 100%;
+  font-size: ${({ title, subtitle }) => title ? 18 : subtitle ? 12 : 14}px;
   font-weight: ${({ title }) => title ? 'bold' : '500'};
+  line-height: 22px;
+
+  margin-bottom: ${({ subtitle }) => subtitle ? 20 : 0 }px;
+  font-style: ${({ subtitle }) => subtitle ? 'italic' : 'normal' };
+
+  color: ${({ featured, theme }) => featured ? theme.colors.primary : theme.colors.text };
 `;
