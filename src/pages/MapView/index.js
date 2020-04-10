@@ -29,7 +29,7 @@ export default function MapViewComponent({ navigation, route }) {
         }}
       >
         {allCountriesList && 
-          allCountriesList.map(({ deathsPerOneMillion, casesPerOneMillion, cases, recovered, deaths, country, countryInfo, updated }) => deaths > 1000 ? (
+          allCountriesList.map(({ deathsPerOneMillion, casesPerOneMillion, cases, recovered, deaths, country, countryInfo, updated }) => deaths > 100 ? (
             <MarkerComponent key={countryInfo._id + country + countryInfo.lat} coordinate={{ latitude: countryInfo.lat, longitude: countryInfo.long, }}>
               <Bubble style={{
                 width: deaths * 0.01,
