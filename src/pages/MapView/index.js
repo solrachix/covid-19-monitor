@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import transformData from '../../utils/transformDate';
 import RoundAndSortNumbers from '../../utils/RoundAndSortNumbers';
@@ -8,7 +8,7 @@ import mapTheme from '../../assets/mapTheme.json';
 import BackComponent from '../../components/BackComponent';
 import { Container, MapView, MarkerComponent, CalloutComponent, Tooltip, Bubble, Text } from './styles';
 
-export default function MapViewComponent({ navigation, route }) {
+function MapViewComponent({ navigation, route }) {
   const allCountriesList = route.params.allCountriesList;
   const selectedCountry = route.params.selectedCountry;
   
@@ -29,7 +29,7 @@ export default function MapViewComponent({ navigation, route }) {
         }}
       >
         {allCountriesList && 
-          allCountriesList.map(({ deathsPerOneMillion, casesPerOneMillion, cases, recovered, deaths, country, countryInfo, updated }) => deaths > 100 ? (
+          allCountriesList.map(({ deathsPerOneMillion, casesPerOneMillion, cases, recovered, deaths, country, countryInfo, updated }) => cases > 100 ? (
             <MarkerComponent key={countryInfo._id + country + countryInfo.lat} coordinate={{ latitude: countryInfo.lat, longitude: countryInfo.long, }}>
               <Bubble style={{
                 width: deaths * 0.01,
@@ -74,3 +74,6 @@ const Decimal = number => RoundAndSortNumbers({
       unit: 'K',
     },
   })
+
+
+export default memo(MapViewComponent);

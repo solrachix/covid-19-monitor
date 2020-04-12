@@ -39,8 +39,8 @@ export const Tooltip = styled.View`
 `;
 
 export const Bubble = styled.View`
-  width: 10px;
-  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
   background-color: rgba(255, 92, 77, 0.6);
 
   /* border: 2px solid rgba(255, 0, 0, 0.8); */

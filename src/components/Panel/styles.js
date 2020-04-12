@@ -20,7 +20,7 @@ export const Content = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: flex-start;
-
+  
   /* background-color: ${({ theme }) => theme.colors.primary }; */
 `;
 
@@ -40,12 +40,14 @@ export const Color = styled.View`
 `;
 
 export const Value = styled.Text`
+  max-width: 100%;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
 `;
 
 export const Text = styled.Text`
+  max-width: 100%;
   color: ${({ theme }) => theme.colors.text };
   font-size: 12px;
   text-align: justify;

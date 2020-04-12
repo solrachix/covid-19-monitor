@@ -19,7 +19,7 @@
       "color": "#333"
     },
     "androidNavigationBar": {
-      "visible": "sticky-immersive",
+      "visible": false,
       "backgroundColor": "#cacaca"
     },
     "updates": {
