@@ -1,7 +1,8 @@
-
-<h1 align="center">
-    <img alt="Monitor covid-19" src="https://github.com/solrachix/covid-19-monitor/blob/master/assets/icon.png?raw=true"  width="200px" style="border-radius:16px;"/>
-</h1>
+<p align="center">
+	<img  alt="Monitor covid-19"  src="https://github.com/solrachix/covid-19-monitor/blob/master/assets/icon.png?raw=true"  width="80px"  style="border-radius:16px;"/>
+	<h2 align="center">Monitor COVID-19</h2>
+	<img  alt="Monitor covid-19"  src="https://github.com/solrachix/covid-19-monitor/blob/master/assets/template.png?raw=true"  width="800px"/>
+</p>
 
 <h3 align="center" >
 Monitor COVID-19 in your country and in the world, view line and circle graphs, maps, among other information.
