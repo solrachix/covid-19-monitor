@@ -1,8 +1,11 @@
 <p align="center">
 	<img  alt="Monitor covid-19"  src="https://github.com/solrachix/covid-19-monitor/blob/master/assets/icon.png?raw=true"  width="80px"  style="border-radius:16px;"/>
-	<h2 align="center">Monitor COVID-19</h2>
+</p>
+<h2 align="center">Monitor COVID-19</h2>
+<p align="center">
 	<img  alt="Monitor covid-19"  src="https://github.com/solrachix/covid-19-monitor/blob/master/assets/template.png?raw=true"  width="800px"/>
 </p>
+
 
 <h3 align="center" >
 Monitor COVID-19 in your country and in the world, view line and circle graphs, maps, among other information.
@@ -98,15 +101,15 @@ If you do not have any of the software below, follow the link to install
 Follow the steps below to run the project on your computer. (using terminal or git bash)
 
 1. Clone this repository
-```
-git clone https://github.com/solrachix/covid-19-monitor.git
-```
-2. Run Mobile App
-```
-cd covid-19-monitor
-yarn
-yarn start
-```
+	```
+	git clone https://github.com/solrachix/covid-19-monitor.git
+	```
+	2. Run Mobile App
+	```
+	cd covid-19-monitor
+	yarn
+	yarn start
+	```
 Then open the Expo app on your phone and scanned the QR code.
 
 ### Sources
