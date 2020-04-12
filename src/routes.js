@@ -76,6 +76,9 @@ function Routes() {
           component={WebViewRender}
           options={{
             title: 'Web View',
+            gestureEnabled: true,
+            cardOverlayEnabled: true,                    
+          ...TransitionPresets.ModalPresentationIOS,
           }}
 
         />

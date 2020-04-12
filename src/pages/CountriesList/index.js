@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, StatusBar } from 'react-native';
+import { ActivityIndicator, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import api from '../../services/api';
