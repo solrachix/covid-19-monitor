@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components'
 
+import RoundAndSortNumbers from '../../utils/RoundAndSortNumbers';
 import round10 from '../../utils/decimalRound';
 
 import { Container, Content, Text, Value, Column, Color, CardPanelContainer, MiniCard, Row } from './styles';
@@ -69,7 +70,7 @@ export function CardPanel({ data }) {
           </Row>
           <Row>
             <Value style={{ color: colors[index] }}>
-              {formatNumber(value)}
+              { Decimal(value) }
             </Value>
 
             <Text
@@ -82,3 +83,19 @@ export function CardPanel({ data }) {
     </CardPanelContainer>
   );
 }
+
+const Decimal = number => RoundAndSortNumbers({
+  number,
+  billion: {
+    decimal: 2,
+    unit: 'B'
+  },
+  million: {
+    decimal: 2,
+    unit: 'M',
+  },
+  thousand: {
+    decimal: 2,
+    unit: 'K',
+  },
+})
