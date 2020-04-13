@@ -15,12 +15,13 @@
     },
     "androidStatusBar": {      
       "translucent": true,
-      "backgroundColor": "#FDFDFD22",
+      "backgroundColor": "#FDFDFD",
       "color": "#333"
     },
     "androidNavigationBar": {
+      "barStyle": "dark-content",
       "visible": false,
-      "backgroundColor": "#cacaca"
+      "backgroundColor": "#FDFDFD"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -28,12 +29,12 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.webtools.covid-19-monitor",
+      "bundleIdentifier": "com.solrachix.covid19monitor",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.webtools.covid19monitor",
-      "versionCode": 2,
+      "package": "com.solrachix.covid19monitor",
+      "versionCode": 1,
       "permissions": []
     },
     "packagerOpts": {
