@@ -1,0 +1,9 @@
+{
+  "project_name": "Covid19 monitor",
+  "type": "mobile",
+  
+  "template_url": "./assets/template.png",
+  "logo_url": "./assets/icon.png",
+
+  "mobile": "./"
+}
