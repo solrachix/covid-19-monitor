@@ -1,5 +1,5 @@
 <p align="center">
-	<img  alt="Monitor covid-19"  src="https://github.com/solrachix/covid-19-monitor/blob/master/assets/icon.png?raw=true"  width="80px"  style="border-radius:16px;"/>
+	<img  alt="Monitor covid-19"  src="https://github.com/solrachix/covid-19-monitor/blob/master/assets/icon.png?raw=true"  width="80px" />
 </p>
 <h2 align="center">Monitor COVID-19</h2>
 <p align="center">
