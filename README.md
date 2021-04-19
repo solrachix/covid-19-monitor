@@ -101,11 +101,11 @@ If you do not have any of the software below, follow the link to install
 Follow the steps below to run the project on your computer. (using terminal or git bash)
 
 1. Clone this repository
-	```
+	```bash
 	git clone https://github.com/solrachix/covid-19-monitor.git
 	```
 	2. Run Mobile App
-	```
+	```bash
 	cd covid-19-monitor
 	yarn
 	yarn start
